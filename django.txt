@@ -1,0 +1,37 @@
+CMD
+E:\ProyectoDjango\
+django-admin startproject WebPlantas
+cd WebPlantas
+python manage.py migrate
+python manage.py runserver
+python manage.py startapp core
+
+editar archivo settings.py con visualcode
+agregar ultima linea:
+'core',
+
+ir a la carpeta core
+abrir views.py para agregar:
+# Create your views here.
+# Crea tus vistas Aqui
+
+def home(request):
+    return render(recuest,'core/index.html')
+
+ir a la carpeta raiz (nombre de tu projecto)
+abrimos  urls y agregar:
+from .views import home
+
+y en urlpatterns
+    path('', home, name="home"),
+
+
+-----------------------------------------
+
+{% load static %}
+
+{% static 'core/
+'%}
+
+<img src="
+<img src="{% static 'core/
